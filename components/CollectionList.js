@@ -16,7 +16,11 @@ export default class CollectionList extends Component {
           Curated places around the world.
         </Text>
 
-        <ScrollView style={styles.collectionsScroll} horizontal={true}>
+        <ScrollView
+          style={styles.collectionsScroll}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+        >
           <View style={styles.collectionsWrapper}>
             <Collection />
             <Collection />

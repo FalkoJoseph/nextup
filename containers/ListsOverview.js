@@ -12,20 +12,23 @@ import { SwipeListView } from 'react-native-swipe-list-view';
 import Header from '../components/Header';
 import TableList from '../components/TableList';
 
-export default class Favorites extends Component {
+export default class ListsOverview extends Component {
   constructor(props) {
     super(props);
     ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows([
-        {id: 2, name: 'Tokyo', description: 'Hi', image: require('../assets/images/sample.jpg')},
-        {id: 1, name: 'Atlanta', description: 'Hello', image: require('../assets/images/sample.jpg')}
+        {id: 1, name: 'Largest cities in the world', description: '4 cities'},
+        {id: 2, name: 'My bucket list', description: '3 cities'}
       ]),
     };
   }
 
   _pressListItem(data) {
-    alert(data.name)
+    this.props.navigator.push({
+      id: 'Single',
+      title: data.name
+    });
   }
 
   _pressDelete(data) {
@@ -35,14 +38,14 @@ export default class Favorites extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header title="Favorites" />
+        <Header title="Lists" />
         <TableList
           dataSource={this.state.dataSource}
-          onPress={ this._pressListItem }
+          onPress={ this._pressListItem.bind(this) }
           onDelete={ this._pressDelete }
-          emptyTitle="You don't have any favorites yet"
-          emptyDescription="When you see a city you like, tap the like icon."
-          emptyImage={require('../assets/images/EmptyFavorites.png')}
+          emptyTitle="You don't have any lists yet"
+          emptyDescription="Add personal lists to categorize your findings."
+          emptyImage={require('../assets/images/EmptyLists.png')}
         />
       </View>
     );

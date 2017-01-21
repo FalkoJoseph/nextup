@@ -11,20 +11,38 @@ export default class Header extends Component {
   _renderTitle() {
     if (this.props.title) {
       return (
-        <Text style={styles.headerTitle}>{this.props.title}</Text>
+        <Text
+          ellipsizeMode="middle"
+          numberOfLines={1}
+          style={styles.headerTitle}
+        >
+          {this.props.title}
+        </Text>
       );
     }
   }
 
   _renderLeft() {
     if (this.props.left) {
-      return (
-        <TouchableOpacity onPress={this.props.leftAction.bind(this)}>
-          <View>
-            <Text style={styles.headerLabel}>{this.props.left}</Text>
-          </View>
-        </TouchableOpacity>
-      );
+      switch (this.props.left) {
+        case 'Back':
+          return (
+            <TouchableOpacity onPress={this.props.leftAction.bind(this)}>
+              <View style={styles.headerBack}>
+                <Image style={styles.headerBackIcon} source={require('../assets/images/Back.png')}/>
+              </View>
+            </TouchableOpacity>
+          );
+        default:
+          return (
+            <TouchableOpacity onPress={this.props.leftAction.bind(this)}>
+              <View>
+                <Text style={styles.headerLabel}>{this.props.left}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        break;
+      }
     }
   }
 
@@ -75,8 +93,16 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-end'
   },
+  headerBack: {
+    padding: 10,
+    paddingRight: 20
+  },
+  headerBackIcon: {
+    width: 13,
+    height: 21,
+  },
   headerCenter: {
-    flex: 1,
+    flex: 4,
     alignItems: 'center'
   },
   headerTitle: {

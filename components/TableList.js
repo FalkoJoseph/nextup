@@ -29,7 +29,13 @@ export default class TableList extends Component {
   _renderListItemDescription(data) {
     if (data.description) {
       return (
-        <Text style={styles.listItemDescription}>{data.description}</Text>
+        <Text
+          style={styles.listItemDescription}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+        >
+          {data.description}
+        </Text>
       );
     }
   }
@@ -45,7 +51,13 @@ export default class TableList extends Component {
             <View style={[styles.listItem, !data.image && styles.listItemSingle]}>
               { this._renderListItemImage(data) }
               <View style={styles.listItemText}>
-                <Text style={styles.listItemName}>{data.name}</Text>
+                <Text
+                  style={styles.listItemName}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  >
+                  {data.name}
+                </Text>
                 { this._renderListItemDescription(data) }
               </View>
             </View>

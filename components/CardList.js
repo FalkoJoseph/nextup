@@ -12,7 +12,11 @@ export default class CardList extends Component {
     return (
       <View>
         <Text style={styles.cardsTitle}>United States</Text>
-        <ScrollView style={styles.cardsScroll} horizontal={true}>
+        <ScrollView
+          style={styles.cardsScroll}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+        >
           <View style={styles.cardsWrapper}>
             <Card />
             <Card />

@@ -13,8 +13,20 @@ export default class Card extends Component {
         <Image style={styles.cardImage} source={require('../assets/images/sample.jpg')}/>
         <View style={styles.cardOverlay}></View>
         <View style={styles.cardContent}>
-          <Text style={styles.cardTitle}>Seattle</Text>
-          <Text style={styles.cardDescription}>United States</Text>
+          <Text
+            style={styles.cardTitle}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+          >
+            Seattle
+          </Text>
+          <Text
+            style={styles.cardDescription}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            >
+            United States
+          </Text>
         </View>
       </View>
     );

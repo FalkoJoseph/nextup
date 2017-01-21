@@ -10,8 +10,20 @@ export default class Collection extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.collectionTitle}>Most beautiful destinations</Text>
-        <Text style={styles.collectionDescription}>5 cities</Text>
+        <Text
+          style={styles.collectionTitle}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          >
+          Most beautiful destinations
+        </Text>
+        <Text
+          style={styles.collectionDescription}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          >
+          5 cities
+        </Text>
 
         <View style={styles.collectionImages}>
           <Image style={styles.collectionImage} source={require('../assets/images/sample.jpg')}/>
