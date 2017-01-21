@@ -118,25 +118,25 @@ const styles = StyleSheet.create({
     color: '#8E8E8E'
   },
   rowBack: {
-		alignItems: 'center',
-		backgroundColor: '#DDD',
-		flex: 1,
-		flexDirection: 'row',
-		justifyContent: 'space-between',
-	},
-	backRightBtn: {
-		alignItems: 'center',
-		bottom: 0,
-		justifyContent: 'center',
-		position: 'absolute',
-		top: 0,
-		width: 75
-	},
-  backRightBtnRight: {
-		backgroundColor: '#FF3B30',
-		right: 0
-	},
+    alignItems: 'center',
+    backgroundColor: '#DDD',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  backRightBtn: {
+    alignItems: 'center',
+    bottom: 0,
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    width: 75
+  },
+    backRightBtnRight: {
+    backgroundColor: '#FF3B30',
+    right: 0
+  },
   backTextWhite: {
-		color: '#FFF'
-	},
+    color: '#FFF'
+  },
 });
